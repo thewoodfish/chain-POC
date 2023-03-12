@@ -33,8 +33,8 @@ mod batman {
         // cargo contract call --contract 5E3rCrW49guH5V9HMrBqys76nSgkzneaLvRvupZzT7DEoqj9 --message set_assistant --args 0x146772656174 --suri //Alice --dry-run
     //     /// Imports all the definitions from the outer scope so we can use them here.
     //     use super::*;
-
-    //     /// We test if the default constructor does its job.
+    //     /// We test if the default constructor does its job.  
+    // cargo contract call --contract 5FiruhykfpQCMKyshuAdiewGR1aKSf9VwhjXYcCutmKGV2hj --message get_assistant --suri //Alice --dry-run
     //     #[ink::test]
     //     fn default_works() {
     //         let batman = Batman::default();
