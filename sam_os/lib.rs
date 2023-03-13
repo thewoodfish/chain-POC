@@ -217,7 +217,6 @@ mod sam_os {
                 }
                 None => {}
             }
-
             return_data
         }
 
@@ -233,20 +232,15 @@ mod sam_os {
                             let mut tuple: (u64, u64, u64) = (0, 0, 0);
                             let file = self.files_meta.get(hk).unwrap_or_default();
                             let did_1 = file.access_list[0].clone();
-                            let did_2 = file.access_list[1].clone();
 
                             // get the access bits and nonce
                             let access_bit1 = self
                                 .access_list
                                 .get((did_1.clone(), hk))
                                 .unwrap_or_default();
-                            let access_bit2 = self
-                                .access_list
-                                .get((did_2.clone(), hk))
-                                .unwrap_or_default();
                             let nonce = file.nonce;
 
-                            tuple = (access_bit1, access_bit2, nonce);
+                            tuple = (nonce, access_bit1, *hk);
                             collator.push(tuple);
                         })
                         .collect::<()>();
